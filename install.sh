@@ -109,7 +109,7 @@ location = /.well-known/acme-challenge/ {
 
 EOF
 )"
-echo "${letsencrypt}" > /etc/nginx/includes/letsencrypt.conf
+echo "${letsencrypt}" | sudo tee -a /etc/nginx/includes/letsencrypt.conf
 
 sudo mkdir /var/www/letsencrypt
 
@@ -139,7 +139,7 @@ server {
 
 EOF
 )"
-echo "${vaultwardenconf}" > /etc/nginx/sites-available/vaultwarden
+echo "${vaultwardenconf}" | sudo tee -a /etc/nginx/sites-available/vaultwarden
 
 #make vaultwarden site live
 sudo ln /etc/nginx/sites-available/vaultwarden /etc/nginx/sites-enabled/vaultwarden

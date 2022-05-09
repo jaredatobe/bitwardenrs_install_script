@@ -13,10 +13,10 @@ This installs BitWarden_RS on Ubuntu 20.04 with SQLite, configures firewall and 
 
 ## Prerequisites 
 
-- Ubuntu 20.04 
-- Create non root user 
-- DNS record created on domain (you can get free domains from freenom.com) pointed to your external IP 
-- Ports 80, 443 and 22 opened on your firewall and pointed to the deployment machine.
+- Ubuntu 20.04
+- Create non-root user 'bitwardenrs'
+- DNS record created on domain (you can get free domains from freenom.com) pointed to your external IP
+- Ports 80, 443 and 22 will be opened on your firewall if they are not already
 
 ## Installation
 
@@ -25,21 +25,23 @@ Install.sh will install the newest version of vaultwarden.
 
 ```bash
 # If logged in as root add a user using these commands prior to install: 
-$ adduser bitwardenrs 
-$ usermod -a -G sudo bitwardenrs
+adduser bitwardenrs 
+usermod -a -G sudo bitwardenrs
 # Switch to bitwardenrs user (script won't run as root) 
-$ su bitwardenrs
+su bitwardenrs
 # Change Directory to bitwardenrs home 
-$ cd ~/
+cd ~/
 # Download the install script from github 
-$ wget https://raw.githubusercontent.com/dinger1986/bitwardenrs_install_script/master/install.sh
+wget https://raw.githubusercontent.com/dinger1986/bitwardenrs_install_script/master/install.sh
 # Set Script as executable 
-$ chmod +x install.sh
+chmod +x install.sh
 # Run script 
-$ ./install.sh
+./install.sh
 ```
 
 Fill in info as requested as the script runs.
+
+Look for the admin token which will be printed on screen near the end of the process.
 
 Once complete go to https://yourdomain/admin
 
@@ -54,4 +56,3 @@ $ chmod +x update.sh
 ```
 
 Fill in info as requested as the script runs.
-
